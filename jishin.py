@@ -26,5 +26,7 @@ seikei = re.sub(r'\s','', ptext, flags=re.UNICODE)
 #いらない部分の削除
 seikei2 = re.sub(r'なお、＊印は気象庁以外の震度観測点についての情報です。','',seikei, flags=re.UNICODE)
 seikei3 = re.sub(r'\&nbsp','',seikei2, flags=re.UNICODE)
+seikei4 = re.sub(r'(（北).*(されます。)','で、', seikei3, flags=re.UNICODE)
+seikei5 = re.sub(r'(平成).*(気象庁発表)','',seikei4, flags=re.UNICODE)
 
-print(seikei3)
+print(seikei5)
