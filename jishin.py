@@ -12,7 +12,7 @@ html = urllib.request.urlopen(url).read()
 data = html.decode('utf8')
 
 #必要な部分の取得作業
-soup = BeautifulSoup(data)
+soup = BeautifulSoup(data, "html.parser")
 
 #calassネームがtextframeの部分だけを持ってくる
 textframe = soup.find("table", class_= "textframe")
